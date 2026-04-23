@@ -22,7 +22,7 @@ export function getHistory(sessionId: string): Message[]
 	return (session.messages)
 }
 
-export function storeMesage(sessionId: string, message: Message): void
+export function storeMessage(sessionId: string, message: Message): void
 {
 	const session = sessions.get(sessionId)
 	if (!session)
