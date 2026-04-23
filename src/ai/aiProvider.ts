@@ -1,7 +1,7 @@
 import OpenAI  from 'openai'
 import { Message } from '../types'
 
-const client = new OpenAI({ apiKey: process.any.OPENAI_API_KEY, })
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, })
 
 export async function chat(history: Message[]): Promise<string>
 {
