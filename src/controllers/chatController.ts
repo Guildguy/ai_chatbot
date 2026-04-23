@@ -1,8 +1,8 @@
-import { Request, Response, NextFuncion } from 'express'
+import { Request, Response, NextFunction } from 'express'
 import * as ChatService from '../services/chatService'
 import { ChatRequestDTO } from '../types'
 
-export async function handleChat(request: Request, response: Response, next: NextFuncion): Promise<void>
+export async function handleChat(request: Request, response: Response, next: NextFunction): Promise<void>
 {
 	try
 	{
