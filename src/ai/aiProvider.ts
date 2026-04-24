@@ -11,5 +11,7 @@ export async function chat(history: Message[]): Promise<string>
 		throw new Error('AI provider returned an empty response')
 	return (reply)*/
 	const last = history[history.length - 1]
+	if (!last)
+		throw new Error('AI provider returned an empty response')
   	return `Mock reply to: "${last.content}"`
 }
