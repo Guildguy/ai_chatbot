@@ -96,6 +96,35 @@ curl -X POST http://localhost:3000/api/chat \
   -d '{"message":"Explique em 1 linha o que e Node.js"}'
 ```
 
+## Fluxo com Ollama (Docker)
+
+Para rodar sem chave de API externa, use Ollama em container:
+
+```bash
+make run-ollama
+```
+
+Esse comando executa, em sequencia:
+
+```bash
+make ollama-up
+make ollama-pull OLLAMA_MODEL=llama3.2
+AI_PROVIDER=ollama npx ts-node src/index.ts
+```
+
+Para encerrar o ambiente:
+
+```bash
+make stop-ollama
+```
+
+Equivalente a:
+
+```bash
+make stop-port PORT=3000
+make ollama-down
+```
+
 ## Estado atual e pontos de atencao
 
 Durante a analise, estes pontos foram identificados no codigo:
